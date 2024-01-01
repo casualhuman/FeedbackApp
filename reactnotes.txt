@@ -1,0 +1,60 @@
+function App(){
+
+    const title = 'Blog Post'
+    const body = 'This is my Blog post'
+    const showComments = true
+
+    const comments = [
+        {id: 1, text: 'Comment one'},
+        {id: 2, text: 'Comment two'},
+        {id: 3, text: 'Comment three'},
+
+    ]
+
+    return (
+        <div className="container">
+            <h1>{title}</h1>
+            <p>{body}</p>
+
+            
+            {showComments 
+                &&
+                (<div className="comments">
+                <h3>Comments {comments.length}</h3>
+                <ul>
+                    {comments.map((comment, index) => (
+                            <li key={index}>{comment.text}</li>
+                    ))}
+                </ul> 
+                </div>)
+            
+            }
+            
+                
+            
+        </div>
+
+    
+    )}
+
+
+/* <>This iscalled a fragment</> */
+
+/* if you don't want to use jsx, use React.createElement('div', {className: 'container}, 
+React.createElement('h1', {}, 'My App')) */
+export default App
+
+// When you pass a prop, you need to catch it in the component
+
+// destructure props
+
+// use impt to import prop types
+
+
+There are two types of states
+
+Component level state, App level state
+
+// _rfce
+
+// state in react is immutable
