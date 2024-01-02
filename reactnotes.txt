@@ -58,3 +58,10 @@ Component level state, App level state
 // _rfce
 
 // state in react is immutable
+
+// prop drilling - when the state you want to handle 
+
+// Whend you have a form, you need to have a state for each input
+
+
+// e.target.value
