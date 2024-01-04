@@ -65,3 +65,17 @@ Component level state, App level state
 
 
 // e.target.value
+
+
+// mpm i uuid - generating unique id for each item
+
+// Framer motion for certain motions 
+
+
+/// React router dom has Browser and Hash router
+// Browser use HTML 5 History API Hash router uses the Hash portion of the url eg localhost/#about
+
+
+// NavLink
+
+// getting parameters from link. we can get the id from a component

@@ -4,7 +4,7 @@ import Button from "./Button"
 import {useState} from 'react'
 
 
-function FeedbackForm() {
+function FeedbackForm({handleAdd}) {
 
     const [text, setText] = useState('')
     const [rating, setRating] = useState(10)
@@ -25,13 +25,28 @@ function FeedbackForm() {
             setBtnDisabled(false)
         }
 
-        console.log(e.target.value)
+        // console.log(e.target.value)
         setText(e.target.value)
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        // console.log('Submitted')
+
+        if(text.trim().length > 10){
+            const newFeedback = {
+                text, 
+                rating
+            }
+
+            handleAdd(newFeedback)
+            setText('')
+        }
     }
 
     return (
     <Card>
-        <form >
+        <form onSubmit={handleSubmit}>
             <h2>How would you rate your service with us ?</h2>
 
             <RatingsSelect select={(rating) => setRating(rating)}/>
