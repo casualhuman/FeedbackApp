@@ -1,4 +1,3 @@
-import {v4 as uuidv4} from 'uuid'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import { useState } from "react"
 import Header from "./components/Header"
@@ -8,31 +7,34 @@ import FeedbackStats from "./components/FeedbackStats"
 import FeedbackForm from "./components/FeedbackForm"
 import AboutIconLink from './components/AboutIconLink'
 import Posts from './components/Posts'
+import { FeedbackProvider } from './context/FeedbackContext'
 
 import AboutPage from './components/pages/AboutPage'
 import Card from './components/shared/Card'
 
 function App() {
 
-    const [feedback, setFeedback] = useState(FeedbackData)
+    // const [feedback, setFeedback] = useState(FeedbackData)
 
-    const addFeedback = (newFeedback) => {
+    // const addFeedback = (newFeedback) => {
 
-        newFeedback.id = uuidv4()
-        // console.log(newFeedback)
+    //     newFeedback.id = uuidv4()
+    //     // console.log(newFeedback)
 
-        setFeedback([newFeedback, ...feedback])
-    }
+    //     setFeedback([newFeedback, ...feedback])
+    // }
 
 
-    const deleteFeedback = (id) => {
-        if(window.confirm('Are you sure you want to delete ?')){
-            setFeedback(feedback.filter((item) => item.id !== id))
-        }
-    }
+    // const deleteFeedback = (id) => {
+    //     if(window.confirm('Are you sure you want to delete ?')){
+    //         setFeedback(feedback.filter((item) => item.id !== id))
+    //     }
+    // }
     
 
     return (
+
+    <FeedbackProvider>
 
    <Router>
     
@@ -47,11 +49,16 @@ function App() {
                 path = '/'
                 element={
                     <>
-                        <FeedbackForm handleAdd={addFeedback} />
-                        <FeedbackStats feedback={feedback}/>
+                        <FeedbackForm 
+                            // handleAdd={addFeedback} 
+                            />
+                        <FeedbackStats 
+                            // feedback={feedback}
+                            />
                         <FeedbackList 
-                            feedback={feedback} 
-                            handleDelete={deleteFeedback}/>
+                            // feedback={feedback} 
+                            // handleDelete={deleteFeedback}
+                            />
                         <AboutIconLink />
                         
                     </>
@@ -76,7 +83,7 @@ function App() {
 
             <Route 
                 exact 
-                
+
                 path='/post/:id/:name/*'
                 element={
                     <>
@@ -94,6 +101,7 @@ function App() {
         
     
    </Router>
+   </FeedbackProvider>
 
     )
 }

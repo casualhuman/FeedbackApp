@@ -79,3 +79,9 @@ Component level state, App level state
 // NavLink
 
 // getting parameters from link. we can get the id from a component
+
+
+// Context - Better way to manage and store our global state. It is a better way than prop drilling
+
+
+// What is a provider

@@ -1,9 +1,15 @@
 import {motion, AnimatePresence} from 'framer-motion'
 import FeedbackItem from "./FeedbackItem"
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
+import {useContext} from 'react'
+import FeedbackContext from '../context/FeedbackContext'
+
+function FeedbackList() {
+
+    // since we are not prop drilling, we get rid of capturing the feedback prop
 
 
-function FeedbackList({feedback, handleDelete}) {
+    const {feedback} = useContext(FeedbackContext)
 
     if(!feedback || feedback.length === 0){
         return <p>No Feedback Yet</p>
@@ -25,7 +31,8 @@ function FeedbackList({feedback, handleDelete}) {
                         <FeedbackItem 
                         key={item.id} 
                         item={item} 
-                        handleDelete={handleDelete}/>
+                        // handleDelete={handleDelete}
+                        />
                     </motion.div>
                     
                 )
@@ -51,9 +58,9 @@ function FeedbackList({feedback, handleDelete}) {
 }
 
 
-FeedbackList.propTypes = {
-    feedback: PropTypes.array.isRequired, 
+// FeedbackList.propTypes = {
+//     feedback: PropTypes.array.isRequired, 
 
-}
+// }
 
 export default FeedbackList
