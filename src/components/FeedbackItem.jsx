@@ -1,4 +1,3 @@
-import {useState} from 'react'
 import Card from './shared/Card'
 import PropTypes from 'prop-types'
 import {FaTimes} from 'react-icons/fa'

@@ -11,8 +11,6 @@ function RatingsSelect({select}) {
 
 
     useEffect(() => {
-      // console.log('hello')
-
       if(feedbackEdit.edit === true){
           
           setSelected(feedbackEdit.item.rating)
