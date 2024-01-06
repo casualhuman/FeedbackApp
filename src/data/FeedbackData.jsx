@@ -2,18 +2,21 @@ const FeedbackData = [
     {
     id: 1,
     rating: 10,
+    username: 'Alie Ra',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae.',
     },
     
     {
     id: 2,
     rating: 9,
+    username: 'Lu Zhi',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae.',
     },
 
     {
     id: 3,
     rating: 8,
+    username: 'Ri Han',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae.',
     },
 ]

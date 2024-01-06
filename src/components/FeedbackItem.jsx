@@ -20,7 +20,9 @@ function FeedbackItem({item}) {
         <button 
           onClick={() => editFeedback(item)}
           className="edit"><FaEdit color='purple'/></button>
-        <div className="text-display">{item.text}</div>
+        
+        <div>{item.username} says</div>
+        <div className="text-display">" <i>{item.text}</i> "</div>
     </Card>
    
   )
